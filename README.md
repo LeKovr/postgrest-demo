@@ -16,16 +16,22 @@ The following packages used:
 
 Also, you should get [jq](http://stedolan.github.com/jq) for json replies pretty print. But this is an option.
 
+### Install
+
 ```
 for n in consul postgres nginx pgrest ; do docker pull lekovr/consup_$n ; done
 echo "127.0.0.1 pgrest.consup" > /etc/hosts
 fidm start
 tail -f onboot.log | grep Done
-curl -s "http://pgrest.consup/api/film?year=gte.2014-01-01&language=eq.Japanese" | jq '.'
-curl -s "http://pgrest.consup/api/director?rating=gt.8" | jq '.'
 ```
 
 ### Use
+
+```
+curl -s "http://pgrest.consup/api/film?year=gte.2014-01-01&language=eq.Japanese" | jq '.'
+curl -s "http://pgrest.consup/api/director?rating=gt.8" | jq '.'
+```
+or just open http://pgrest.consup in you browser
 
 ### Initial setup
 
