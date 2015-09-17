@@ -1,0 +1,7 @@
+vendor/ng-admin-postgrest
+vendor/postgrest-example
+vendor/swagger-ui
+www/adm
+www/ui
+onboot.log
+log

@@ -1,0 +1,8 @@
+%syntax-version=1.0.0
+%project=pgrest1
+
+appschema 2015-09-16T18:01:07Z root <root@pgrest.consup> # Add schema for pgrest objects
+film 2015-09-16T18:31:28Z root <root@pgrest.consup> # Add the film tables
+insert_data [film appschema] 2015-09-16T18:40:09Z root <root@pgrest.consup> # Fill tables with data
+v1schema 2015-09-16T18:43:35Z root <root@pgrest.consup> # Adding API v1 schema
+v1views 2015-09-16T18:45:04Z root <root@pgrest.consup> # Adding API v1 views

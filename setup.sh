@@ -1,0 +1,3 @@
+
+fidm rm
+fidm start
