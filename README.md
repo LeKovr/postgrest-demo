@@ -8,14 +8,28 @@ The following packages used:
 * [Sqitch](http://sqitch.org/)
 * [Bower](http://bower.io/)
 
+### Requirements
+
+* [Docker](http://docker.io)
+* [ConSup](https://github.com/LeKovr/consup)
+* [FIDM](https://github.com/LeKovr/fidm)
+
+Also, you should get [jq](http://stedolan.github.com/jq) for json replies pretty print. But this is an option.
+
+```
+for n in consul postgres nginx pgrest ; do docker pull lekovr/consup_$n ; done
+echo "127.0.0.1 pgrest.consup" > /etc/hosts
+fidm start
+tail -f onboot.log | grep Done
+curl -s "http://pgrest.consup/api/film?year=gte.2014-01-01&language=eq.Japanese" | jq '.'
+curl -s "http://pgrest.consup/api/director?rating=gt.8" | jq '.'
+```
+
 ### Use
 
-fidm start
-curl -s "http://pgrest.consup/api/film?year=gte.2014-01-01&language=eq.Japanese" | jq '.'
-curl -s "http://pgrest.consup/api/director?rating=gt.8"   | jq '.'
+### Initial setup
 
-### Setup
-
+If you going to create new project, read
 Doc: http://blog.jonharrington.org/postgrest-introduction/
 
 *Sqitch init sample*
