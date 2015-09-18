@@ -1,0 +1,48 @@
+diff -crN postgrest-example.orig/deploy/ssl.sql postgrest-example/deploy/ssl.sql
+*** postgrest-example.orig/deploy/ssl.sql	2015-09-18 12:25:06.587789308 +0300
+--- postgrest-example/deploy/ssl.sql	2015-09-18 12:22:16.482876627 +0300
+***************
+*** 2,7 ****
+  
+  BEGIN;
+  
+! create extension if not exists sslinfo;
+  
+  COMMIT;
+--- 2,7 ----
+  
+  BEGIN;
+  
+! -- create extension if not exists sslinfo;
+  
+  COMMIT;
+diff -crN postgrest-example.orig/sqitch.conf postgrest-example/sqitch.conf
+*** postgrest-example.orig/sqitch.conf	1970-01-01 03:00:00.000000000 +0300
+--- postgrest-example/sqitch.conf	2015-09-18 12:22:09.411171177 +0300
+***************
+*** 0 ****
+--- 1,6 ----
++ [core]
++ 	engine = pg
++ [target "production"]
++ 	uri = db:pg:
++ [engine "pg"]
++ 	target = production
+diff -crN postgrest-example.orig/verify/ssl.sql postgrest-example/verify/ssl.sql
+*** postgrest-example.orig/verify/ssl.sql	2015-09-18 12:25:06.587789308 +0300
+--- postgrest-example/verify/ssl.sql	2015-09-18 12:22:30.494293000 +0300
+***************
+*** 2,7 ****
+  
+  BEGIN;
+  
+! SELECT ssl_is_used();
+  
+  ROLLBACK;
+--- 2,7 ----
+  
+  BEGIN;
+  
+! -- SELECT ssl_is_used();
+  
+  ROLLBACK;

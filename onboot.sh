@@ -15,7 +15,7 @@ N=ng-admin-postgrest
 N=postgrest-example
 [ -d $N ] || {
   git clone https://github.com/begriffs/$N.git
-  cp sqitch.conf $N
+  patch -p0 < $N.diff
 }
 
 N=swagger-ui
@@ -32,9 +32,6 @@ echo "Setup adm..."
 pushd www/adm
 echo n | bower install --allow-root
 popd
-
-#TODO: solve this
-PGPASSWORD=op psql -h $PG_HOST -U op $DB_NAME -c "create extension if not exists sslinfo;"
 
 echo "Deploy database with sqitch"
 pushd vendor/postgrest-example

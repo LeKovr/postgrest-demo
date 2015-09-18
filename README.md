@@ -54,6 +54,3 @@ pgrest1=# alter database pgrest1 set log_min_duration_statement = 0;
 pgrest1=# alter database pgrest1 set log_statement = 'all';
 ```
 
-### TODO
-
-* Found a way to run superuser command (create extension if not exists sslinfo)
