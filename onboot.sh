@@ -9,7 +9,14 @@ N=ng-admin-postgrest
   git clone https://github.com/marmelab/$N.git
   pushd $N
   patch -p1 < ../$N.diff
+  # setup angularjs
+  echo n | bower install --allow-root
   popd
+}
+N1=ng-admin-postgrest1
+[ -d $N1 ] || {
+  cp -lr $N $N1
+  patch -p0 < $N1.diff
 }
 
 N=postgrest-example
@@ -26,12 +33,8 @@ popd
 
 # Make symlinks
 [ -L www/adm ] || ln -s ../vendor/ng-admin-postgrest www/adm
+[ -L www/adm1 ] || ln -s ../vendor/ng-admin-postgrest1 www/adm1
 [ -L www/ui ] || ln -s ../vendor/swagger-ui/dist www/ui
-
-echo "Setup adm..."
-pushd www/adm
-echo n | bower install --allow-root
-popd
 
 echo "Deploy database with sqitch"
 pushd vendor/postgrest-example

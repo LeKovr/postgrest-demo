@@ -1,0 +1,20 @@
+diff -crN ng-admin-postgrest.orig/main.js ng-admin-postgrest1/main.js
+*** ng-admin-postgrest.orig/main.js	2015-09-17 11:06:52.012307311 +0300
+--- ng-admin-postgrest1/main.js	2015-09-18 12:36:42.486861045 +0300
+***************
+*** 59,65 ****
+  
+          var app = nga
+              .application('Ng-admin + PostgREST')
+!             .baseApiUrl(location.origin + '/api/');
+  
+          var speaker = nga.entity('speakers');
+          var session = nga.entity('sessions');
+--- 59,65 ----
+  
+          var app = nga
+              .application('Ng-admin + PostgREST')
+!             .baseApiUrl(location.origin + '/api1/');
+  
+          var speaker = nga.entity('speakers');
+          var session = nga.entity('sessions');
