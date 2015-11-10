@@ -20,7 +20,7 @@ Also, you should get [jq](http://stedolan.github.com/jq) for json replies pretty
 
 ```
 for n in consul postgres nginx pgrest ; do docker pull lekovr/consup_$n ; done
-echo "127.0.0.1 pgrest.consup" > /etc/hosts
+echo "127.0.0.1 pgrest.consup" >> /etc/hosts
 fidm start
 tail -f onboot.log | grep Done
 ```
